@@ -27,18 +27,12 @@ In my experience, your results may vary:
 - Python & Whatever awful modules the code needs
 - Arduino IDE
 
-## Installation
-- TBD !
-
 ## Usage
 - TBD Properly
 For RGB565 Mode (Default / the "main" version) then:
 - Upload the RGB565 Arduino Sketch to the esp32
 - Run the shortcut or the .pyw file
 - Will be in the system tray, you can right click to reconnect or quit
-
-## Project Structure
-- TBD
 
 ## Troubleshooting
 - TBD lol
