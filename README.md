@@ -18,7 +18,7 @@ In my experience, your results may vary:
 ## Hardware Requirements
 - [Seeed Studio XIAO ESP32C3 Microcontroller](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
 - 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
-- Wiring Diagram:<img width="2107" height="4044" alt="Wiring Diagram" src="https://github.com/user-attachments/assets/bcea3817-a9b8-4690-91e1-419bc28f2af2" />
+- Wiring Diagram:<img width="702" height="1348" alt="Wiring Diagram" src="https://github.com/user-attachments/assets/bcea3817-a9b8-4690-91e1-419bc28f2af2" />
 - 3D Print the enclosure from MakerWorld: (link tbd)
 
 
