@@ -10,4 +10,4 @@ In my experience, your results may vary:
 - RGB 332 = 7.9 fps
 - RGB 565 = 6.45 fps
 
-(RGB 332 looks pretty shit, not worth including for marginal FPS gains over RGB565 which looks much better)
+(RGB 332 looks pretty shit, hence not worth including in the code base due to marginal FPS gains over RGB565 which looks much better)
