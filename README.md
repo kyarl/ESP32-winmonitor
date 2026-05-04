@@ -14,8 +14,8 @@ In my experience, your results may vary:
 
 # How To Use
 ## Hardware Requirements
-- Seeed Studio XIAO ESP32C3 Microcontroller (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
-- 320x170 LCD display (SPI), can be generic from aliexpress. can also probably be any other resolution if you can adjust code!
+- [Seeed Studio XIAO ESP32C3 Microcontroller](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
+- 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
 - Wiring Diagram TBD, otherwise check arduino sketch for SPI pins
 
 ## Software Requirements
