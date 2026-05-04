@@ -42,4 +42,5 @@ For RGB565 Mode (Default / the "main" version) then:
 
 ## License
 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license
+
 "license allows users to freely share (copy/redistribute) and adapt (remix/build upon) material in any medium. Usage must be non-commercial, and proper attribution must be given to the creator."
