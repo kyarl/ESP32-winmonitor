@@ -1,6 +1,8 @@
 # ESP32-winmonitor
 Uses a python app to grab frames of a windows monitor an streams them over wifi to an ESP32 with an 320x170 LCD Screen connected over SPI
 
+Fairwarning this is vibecoded garbage but that is ok because it works! Feel free to optimise this theres probably lots of room to make it faster.
+
 Able to achieve around 5-6 fps when using full RGB565 colours, alternatively can reach higher framerates using either greyscale, or purely B&W colour. Using different colour specs requires completely different Arduino sketches to be uploaded to the ESP32
 
 ## Achievable Framerates
@@ -14,8 +16,8 @@ In my experience, your results may vary:
 
 # How To Use
 ## Hardware Requirements
-- Seeed Studio XIAO ESP32C3 Microcontroller (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
-- 320x170 LCD display (SPI), can be generic from aliexpress. can also probably be any other resolution if you can adjust code!
+- [Seeed Studio XIAO ESP32C3 Microcontroller](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
+- 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
 - Wiring Diagram TBD, otherwise check arduino sketch for SPI pins
 
 ## Software Requirements
