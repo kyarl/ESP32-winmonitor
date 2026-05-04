@@ -5,13 +5,13 @@
 #include <Adafruit_ST7789.h>
 #include <SPI.h>
 
-#define TFT_BLK  7
+#define TFT_BLK  7 // GPIO7 (D5)
 // mosi / sda connected to D10 (GPIO10 default xiao)
 // miso NC (not connected)
-// scl / sck connected to D8 (GPIO10 default xiao)
-#define TFT_CS   6
-#define TFT_DC   2
-#define TFT_RST  3
+// scl / sck connected to D8 (GPIO8 default xiao)
+#define TFT_CS   6 // GPIO6 (D4)
+#define TFT_DC   2 // GPIO2 (D0)
+#define TFT_RST  3 // GPIO3 (D1)
 #define WIDTH    170
 #define HEIGHT   320
 #define PORT     12345
