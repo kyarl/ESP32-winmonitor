@@ -11,3 +11,35 @@ In my experience, your results may vary:
 - RGB 565 = 6.45 fps
 
 (RGB 332 looks pretty shit, hence not worth including in the code base due to marginal FPS gains over RGB565 which looks much better)
+
+# How To Use
+## Hardware Requirements
+- Seeed Studio XIAO ESP32C3 Microcontroller (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
+- 320x170 LCD display (SPI), can be generic from aliexpress. can also probably be any other resolution if you can adjust code!
+- Wiring Diagram TBD, otherwise check arduino sketch for SPI pins
+
+## Software Requirements
+- Python & Whatever awful modules the code needs
+- Arduino IDE
+
+## Installation
+- TBD !
+
+## Usage
+- TBD Properly
+For RGB565 Mode (Default / the "main" version) then:
+- Upload the RGB565 Arduino Sketch to the esp32
+- Run the shortcut or the .pyw file
+- Will be in the system tray, you can right click to reconnect or quit
+
+## Project Structure
+- TBD
+
+## Troubleshooting
+- TBD lol
+- Check ur wiring I guess
+- Also probably I fucked up the code when cleaning it up for github
+
+## License
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license
+"license allows users to freely share (copy/redistribute) and adapt (remix/build upon) material in any medium. Usage must be non-commercial, and proper attribution must be given to the creator."
