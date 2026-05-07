@@ -14,6 +14,16 @@ In my experience, your results may vary:
 
 (RGB 332 looks pretty shit, hence not worth including in the code base due to marginal FPS gains over RGB565 which looks much better)
 
+## WiFi Throughput / Theoretical Limits
+At 320x170 using full RGB565 colour (16-bit), each frame is ~106 KB.  
+At the current achieved ~6.45 FPS, this corresponds to roughly ~685 KB/s (~5.5 Mbit/s).  
+
+The ESP32-C3 Seeed XIAO typically achieves around 10–30 Mbit/s WiFi throughput (~1.25–3.75 MB/s), meaning the current implementation reaches somewhere between 18–55% of the ESP32's theoretical WiFi bandwidth.  
+
+Note that currently using TCP rather than UDP. Could theoretically go faster with UDP, however I assume there are other areas for improvement before this.
+
+Likely bottlenecked by shite code rather than reaching actual hardware limitations here, go ahead and try to optimise/rewrite this :)
+
 # How To Use
 ## Hardware Requirements
 - [Seeed Studio XIAO ESP32C3 Microcontroller](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) (other ESP32 & Wifi enabled MCUs Probably work too ! More likely if another XIAO Board)
