@@ -3,7 +3,11 @@ Uses a python app to grab frames of a windows monitor an streams them over wifi 
 
 Fairwarning this is vibecoded garbage but that is ok because it works! Feel free to optimise this theres probably lots of room to make it faster (Some suggestions below, but more knowledgeable people will have better ideas).
 
-Able to achieve around 5-6 fps when using full RGB565 colours, alternatively can reach higher framerates using either greyscale, or purely B&W colour. Using different colour specs requires completely different Arduino sketches to be uploaded to the ESP32
+ONLY TESTED WITH/COMPATABLE WITH WINDOWS.
+(Optional) But RECCOMENDED to use VDD (Virtual Display Driver: https://github.com/VirtualDrivers/Virtual-Display-Driver), Instead of just streaming your main full sized monitor.
+
+Able to achieve around 5-6 fps when using full RGB565 colours, alternatively can reach higher framerates using either greyscale, or purely B&W colour. Using different colour specs requires completely different Arduino sketches to be uploaded to the ESP32.
+Acceptable framerate for some basic GIFs, or more appropriately, for rainmeter widgets, etc. Not really for a "functional monitor" for watching youtube videos, etc.
 
 ## Achievable Framerates
 In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 Single Core/Same Code)*
@@ -32,20 +36,23 @@ Wiring diagrams are pretty yucky so I will probably end up making a schematic at
 
 
 ## Software Requirements
+- IMPORTANT: The python code is set up to look for a monitor of resolution 640 x 340 Pixels "TARGET_MONITOR_SIZE". This should be adjusted to ther resolution of one of your monitors, or if you want this to act as a dedicated screen, you must setup a virtual display using: https://github.com/VirtualDrivers/Virtual-Display-Driver
 - Python & Whatever awful modules the code needs
-- Arduino IDE
+- Arduino IDE to upload the code to the ESP32. Google how to make Arduino IDE Compatible with ESP32 Boards if you haven't done this already.
 
 ## Usage
 - TBD Properly
 For RGB565 Mode (Default / the "main" version) then:
+- If you are using S3 Supermini, edit pin definitions.
 - Upload the RGB565 Arduino Sketch to the esp32
 - Run the shortcut or the .pyw file
 - Will be in the system tray, you can right click to reconnect or quit
+- If you want, add the shortcut to your startup apps folder.
 
 ## Troubleshooting
 - TBD lol
-- Check ur wiring I guess
-- Also probably I fucked up the code when cleaning it up for github/removing PII.
+- Check ur wiring I guess as a first step. Also check your pinout if you got a non-XIAO board.
+- Also probably I messed up the code when cleaning it up for github/removing PII.
 
 ## License
 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license
