@@ -2,10 +2,11 @@
 Uses a python app to grab frames of a windows monitor an streams them over wifi to an ESP32 with an 320x170 LCD Screen connected over SPI
 
 Fairwarning this is vibecoded garbage but that is ok because it works! Feel free to optimise this theres probably lots of room to make it faster (Some suggestions below, but more knowledgeable people will have better ideas).
+If you haven't read everything here **(especially things in BOLD)**, then don't complain when it doesnt work!
 
-ONLY TESTED WITH/COMPATABLE WITH WINDOWS.
+**ONLY TESTED WITH/COMPATABLE WITH WINDOWS.**
 
-(Optional) But RECCOMENDED to use VDD (Virtual Display Driver: https://github.com/VirtualDrivers/Virtual-Display-Driver), Instead of just streaming your main full sized monitor.
+(Optional) But **RECCOMENDED to use VDD** (Virtual Display Driver: https://github.com/VirtualDrivers/Virtual-Display-Driver), Instead of just streaming your main full sized monitor.
 
 Able to achieve around 5-6 fps when using full RGB565 colours, alternatively can reach higher framerates using either greyscale, or purely B&W colour. Using different colour specs requires completely different Arduino sketches to be uploaded to the ESP32.
 Acceptable framerate for some basic GIFs, or more appropriately, for rainmeter widgets, etc. Not really for a "functional monitor" for watching youtube videos, etc.
@@ -37,7 +38,7 @@ Wiring diagrams are pretty yucky so I will probably end up making a schematic at
 
 
 ## Software Requirements
-- IMPORTANT: The python code is set up to look for a monitor of resolution 640 x 340 Pixels "TARGET_MONITOR_SIZE". This should be adjusted to ther resolution of one of your monitors, or if you want this to act as a dedicated screen, you must setup a virtual display using: https://github.com/VirtualDrivers/Virtual-Display-Driver
+- **IMPORTANT: The python code is set up to look for a monitor of resolution 640 x 340 Pixels "TARGET_MONITOR_SIZE".** This should be adjusted to ther resolution of one of your monitors, or if you want this to act as a dedicated screen, you must setup a virtual display using: https://github.com/VirtualDrivers/Virtual-Display-Driver
 - Python & Whatever awful modules the code needs
 - Arduino IDE to upload the code to the ESP32. Google how to make Arduino IDE Compatible with ESP32 Boards if you haven't done this already.
 
