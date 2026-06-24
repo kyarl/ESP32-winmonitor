@@ -5,13 +5,29 @@
 #include <Adafruit_ST7789.h>
 #include <SPI.h>
 
-#define TFT_BLK  7 // GPIO7 (D5)
+// Pinouts:
+// - Note, you dont need to define the pins for SPI, unless you use non-default ones.
+
+// GENERIC ESP32 S3 Supermini (NOT C3).
+// Check YOUR board's silkscreen; SuperMini variants differ.
+//
+// BLK (LED)  = GPIO 3
+// CS         = GPIO 10
+// DC         = GPIO  4
+// RST        = GPIO  5
+// SDA/MOSI   = GPIO 11  (SPI MOSI default)
+// SCL/SCK    = GPIO 12  (SPI SCK  default)
+
+// XIAO ESP32C3:
 // mosi / sda connected to D10 (GPIO10 default xiao)
 // miso NC (not connected)
 // scl / sck connected to D8 (GPIO8 default xiao)
 #define TFT_CS   6 // GPIO6 (D4)
 #define TFT_DC   2 // GPIO2 (D0)
 #define TFT_RST  3 // GPIO3 (D1)
+#define TFT_BLK  7 // GPIO7 (D5)
+
+
 #define WIDTH    170
 #define HEIGHT   320
 #define PORT     12345
