@@ -30,7 +30,7 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 - 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
 - Some short female to female dupont jumpers. (Technically dont have to be short, but easier to deal fit in enclosure)
 - Assembly Guide Coming Soon!
-- 3D Print the enclosure from MakerWorld (For appropriate MCU Above): (link tbd)
+- 3D Print the enclosure from MakerWorld (For the appropriate MCU): (link tbd)
 - Wiring Diagrams XIAO ESP32 C3 & ESP32 S3 Supermini:
   
 <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/Wiring%20Diagram.png" /> <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/s3%20wiring%20diagram.png"  />
