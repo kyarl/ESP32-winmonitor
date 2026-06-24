@@ -4,6 +4,7 @@ Uses a python app to grab frames of a windows monitor an streams them over wifi 
 Fairwarning this is vibecoded garbage but that is ok because it works! Feel free to optimise this theres probably lots of room to make it faster (Some suggestions below, but more knowledgeable people will have better ideas).
 
 ONLY TESTED WITH/COMPATABLE WITH WINDOWS.
+
 (Optional) But RECCOMENDED to use VDD (Virtual Display Driver: https://github.com/VirtualDrivers/Virtual-Display-Driver), Instead of just streaming your main full sized monitor.
 
 Able to achieve around 5-6 fps when using full RGB565 colours, alternatively can reach higher framerates using either greyscale, or purely B&W colour. Using different colour specs requires completely different Arduino sketches to be uploaded to the ESP32.
