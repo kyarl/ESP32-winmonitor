@@ -25,6 +25,7 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 - Assembly Guide Coming Soon!
 - 3D Print the enclosure from MakerWorld (For appropriate MCU Above): (link tbd)
 - Wiring Diagrams XIAO ESP32 C3 & ESP32 S3 Supermini:
+  
 <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/Wiring%20Diagram.png" /> <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/s3%20wiring%20diagram.png"  />
 
 Wiring diagrams are pretty yucky so I will probably end up making a schematic at some point. For now just use the code & comments as a quick reference.
