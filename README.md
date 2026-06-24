@@ -2,6 +2,7 @@
 Uses a python app to grab frames of a windows monitor an streams them over wifi to an ESP32 with an 320x170 LCD Screen connected over SPI
 
 Fairwarning this is vibecoded garbage but that is ok because it works! Feel free to optimise this theres probably lots of room to make it faster (Some suggestions below, but more knowledgeable people will have better ideas).
+
 If you haven't read everything here **(especially things in BOLD)**, then don't complain when it doesnt work!
 
 **ONLY TESTED WITH/COMPATABLE WITH WINDOWS.**
