@@ -21,7 +21,7 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 
 (RGB 332 looks pretty crap, hence not worth including in the codebase due to marginal FPS gains over RGB565 which looks much better)
 
-*These framerates can likely be increased by making use of the ESP32 S3 Supermini's additional core, which would allow parallelising recieving and displaying of frames. Alternatively also might be able to make use of usb CDC to remove the reliance on WiFi streaming, but I haven't looked into this.
+*These framerates can likely be increased by making use of the ESP32 S3 Supermini's additional core, which would allow parallelising recieving and displaying of frames. Alternatively also might be able to make use of usb CDC to remove the reliance on WiFi streaming (And thus use a RP2350 for example), but I haven't looked into this.
 
 # How To Use
 ## Hardware Requirements
