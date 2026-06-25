@@ -32,12 +32,15 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 - OR [ESP32 S3 Supermini](https://www.espboards.dev/esp32/esp32-s3-super-mini/) (Hopefully someone can offer up some code to parallelise receiving and displaying frames with the S3's second core.)  
 - 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
 - Some short female to female dupont jumpers. (Technically dont have to be short, but easier to deal fit in enclosure)
-- 3D Print the enclosure from MakerWorld (For the appropriate MCU): (link tbd)
+- [3D Print the enclosure from MakerWorld (For the appropriate MCU)](https://makerworld.com/en/models/2975055-esp32-windows-monitor#profileId-3337114):
 - Wiring Diagrams XIAO ESP32 C3 & ESP32 S3 Supermini:
   
 <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/Wiring%20Diagram.png" /> <img width="45%" alt="Wiring Diagram" src="https://raw.githubusercontent.com/kyarl/ESP32-winmonitor/refs/heads/main/misc/s3%20wiring%20diagram.png"  />
 
-Wiring diagrams are pretty yucky so I will probably end up making a schematic at some point. For now just use the code & comments as a quick reference.
+Wiring diagrams are pretty yucky so its probably easier to just go based on this:
+<img width="566" height="446" alt="image" src="https://github.com/user-attachments/assets/ae703289-f09d-4faf-ba12-9bd7a56455c8" />
+These pinouts also depend on the code you upload.
+
 
 
 ## Software Requirements
