@@ -39,6 +39,7 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 
 Wiring diagrams are pretty yucky so its probably easier to just go based on this:
 <img width="566" height="446" alt="image" src="https://github.com/user-attachments/assets/ae703289-f09d-4faf-ba12-9bd7a56455c8" />
+
 These pinouts also depend on the code you upload.
 
 
