@@ -61,6 +61,6 @@ For RGB565 Mode (Default / the "main" version) then:
 - Also probably I messed up the code when cleaning it up for github/removing PII.
 
 ## License
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license
 
-"license allows users to freely share (copy/redistribute) and adapt (remix/build upon) material in any medium. Usage must be non-commercial, and proper attribution must be given to the creator."
+"This license allows users to freely share (copy/redistribute) and adapt (remix/build upon) the material in any medium. Usage must be non-commercial, proper attribution must be given to the creator, and any derivative works must be distributed under the exact same license."
