@@ -31,25 +31,31 @@ from lib.esp32_tft_wifiSender_RGB565 import send_image, connect_stream      # TC
 # (RGB 332 looks pretty bad, not worth including for marginal FPS gains)
 
 
-
-
-
-
 # ----------------- CONFIG -----------------
-ESP_IP = "esp32display.local"       # apparently IP randomly changes which is just great. so use esp32display.local to never connect to wrong thingo
-PORT = 12345
-WIDTH, HEIGHT = 170, 320
+ESP_IP = "esp32display.local"       # apparently local IP randomly changes which is just great. so used esp32display.local so should always be connecting to the right device, cool!
+PORT = 12345                        # Arbitrary, just make sure it matches the ESP32 sketch (12345 too).
+
+WIDTH, HEIGHT = 170, 320            # Target size of the actual screen (eg the 1.9 inch tft is 170 x 320). I think I screwed up the code here so its actually rotated 90 degrees so the width and height are swapped. but it works so whatever someone else can fix this.
+
 TARGET_FPS = 30                     # target FPS - for RGB565 usually ends up around 4.5~5.5 fps max. doesnt really hurt having this higher than what is achievable.
 FRAME_INTERVAL = 1 / TARGET_FPS     # calculates the delay between frames based on FPS target
 
-TARGET_MONITOR_SIZE = (640, 340)        # (width, height)
-MONITOR_RETRY_INTERVAL = 1.0       # how long to wait if monitor missing
+### VERY VERY IMPORTANT VARIABLE
+TARGET_MONITOR_SIZE = (640, 340)    ### Format is (width, height) of the TARGET MONITOR TO BE STREAMING TO THE ESP32. 
+# IF THERE IS NO MONITOR FOUND OF THIS SIZE, THE PROGRAM WILL WAIT UNTIL ONE IS FOUND. 
+# Use VDD if you want a simulated monitor to be dedicated to this esp32 display
+# (eg if you have a 640x340 monitor, set this to (640, 340) and it will stream that monitor to the esp32). 
+# If you want to stream your main monitor, set this to the size of your main monitor. 
+# If you want to stream a specific monitor, set this to the size of that monitor.
 
-TRAY_ICON_PATH = Path("icon.ico")  # tray icon 
+MONITOR_RETRY_INTERVAL = 1.0        # how long to wait if monitor missing
 
-CURSOR_SPRITE_PATH = Path("cursor.png") # cursor icon 32x32
+TRAY_ICON_PATH = Path("icon.ico")   # tray icon 
+
+CURSOR_SPRITE_PATH = Path("cursor.png") # cursor icon 32x32 (adds cursor overlay where your cursor is, since this isnt in the screenshots taken by the code)
 cursor_img = Image.open(CURSOR_SPRITE_PATH).convert("RGBA")
 
+# stuff for retrying connections and sending images (esp32 can drop connection sometimes, etc)
 CONNECT_RETRY_BASE = 2.0           # seconds
 CONNECT_RETRY_MAX = 30.0
 
