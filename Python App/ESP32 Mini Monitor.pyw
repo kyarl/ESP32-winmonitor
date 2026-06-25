@@ -10,6 +10,7 @@ import mss
 from win11toast import notify
 import pystray
 from pystray import MenuItem as item
+from collections import deque
 
 # Module for sending image and managing connection to esp32 
 # - ONLY HAVE ONE ENABLED AT A TIME
@@ -21,16 +22,13 @@ from lib.esp32_tft_wifiSender_RGB565 import send_image, connect_stream      # TC
 #from lib.esp32_tft_wifiSender_Greyscale import send_image, connect_stream  # TCP Greyscale
 
 
-#from esp32_tft_wifiSenderUDP import send_image, connect_stream # UDP
-
-
 ### ------- Achieved Framerates -------
 # Monochrome = 19.5 fps
 # 8 Bit greyscale = 9.6 fps
 # RGB 332 = 7.9 fps
 # RGB 565 = 6.45 fps
 
-# (RGB 332 looks pretty shit, not worth including for marginal FPS gains)
+# (RGB 332 looks pretty bad, not worth including for marginal FPS gains)
 
 
 
@@ -52,10 +50,10 @@ TRAY_ICON_PATH = Path("icon.ico")  # tray icon
 CURSOR_SPRITE_PATH = Path("cursor.png") # cursor icon 32x32
 cursor_img = Image.open(CURSOR_SPRITE_PATH).convert("RGBA")
 
-CONNECT_RETRY_BASE = 1.0           # seconds
+CONNECT_RETRY_BASE = 2.0           # seconds
 CONNECT_RETRY_MAX = 30.0
 
-SEND_RETRY_BASE = 1
+SEND_RETRY_BASE = 2.0
 SEND_RETRY_MAX = 5.0
 # ------------------------------------------
 
@@ -67,11 +65,34 @@ SEND_RETRY_MAX = 5.0
 running = True
 
 def send_notification(title: str, msg: str):
+    # Rate limiting variables
+    RATE_LIMIT_WINDOW = 5  # seconds
+    RATE_LIMIT_THRESHOLD = 2  # max sends within window
+    RATE_LIMIT_RESET = 10  # seconds to reset after limiting
+
+    if not hasattr(send_notification, "_timestamps"):
+        send_notification._timestamps = deque()
+        send_notification._last_limited = 0
+
+    now = time.time()
+
+    # Remove timestamps outside the rate limit window
+    while send_notification._timestamps and send_notification._timestamps[0] < now - RATE_LIMIT_WINDOW:
+        send_notification._timestamps.popleft()
+
+    # Check if rate limit exceeded
+    if len(send_notification._timestamps) >= RATE_LIMIT_THRESHOLD:
+        if now - send_notification._last_limited > RATE_LIMIT_RESET:
+            send_notification._last_limited = now
+            print("DEBUG: Rate limit exceeded. Notifications paused temporarily.")
+        return
+
+    # Add current timestamp and send notification
+    send_notification._timestamps.append(now)
     try:
         notify(title, msg)
-
     except Exception:
-        # don't let notification failures crash the capture loop
+        # Don't let notification failures crash the capture loop
         print("DEBUG: Failed to send win11 notify.")
         pass
 
@@ -92,7 +113,7 @@ def open_connection_with_retries():
         except Exception as e:
             attempts += 1
             if attempts >= 3:
-                #dont need to notify here because already notifies the runtime error
+                # Don't need to notify here because already notifies the runtime error
                 '''send_notification(
                     "Virtual Monitor",
                     f"3 attempts to connect failed, ending."
@@ -101,14 +122,15 @@ def open_connection_with_retries():
                 running = False
                 print("DEBUG: Max 3 Connect Attempts Passed")
                 raise RuntimeError("Exceeded max connection attempts")
-            # notify and wait before next attempt
-            send_notification(
+            
+            # notify and wait before next attempt [REMOVED]
+            '''send_notification(
                 "Virtual Monitor",
                 f"Connection failed ({attempts}/3): {e}. Retrying in {int(backoff)}s"
-            )
+            )'''
             print(f"DEBUG: Failed ({attempts}/3) connect attempts.")
             time.sleep(backoff)
-            backoff = min(backoff * 2, CONNECT_RETRY_MAX)
+            backoff = min(backoff * 3, CONNECT_RETRY_MAX)
 
 def safe_send_image(sock, img):
     """Send image, retrying/connect recover if send fails."""
@@ -119,7 +141,9 @@ def safe_send_image(sock, img):
             return True
         except Exception as e:
             print("DEBUG: Image send failed.")
-            send_notification("Virtual Monitor", f"Send failed: {e}. Please Reconnect")
+
+            #send_notification("Virtual Monitor", f"Send failed: {e}. Please Reconnect")
+
             time.sleep(backoff)
 
             return False
@@ -249,8 +273,8 @@ def capture_loop():
         except Exception as e:
             # Catch-all - notify & try graceful shutdown
             fatal_errors += 1
-            send_notification("Virtual Monitor", f"Fatal error: {e}")
-            print(f"DEBUG: Fatal error in capture_loop: {e}")
+            send_notification("Virtual Monitor", f"Error: {e}")
+            print(f"DEBUG: error in capture_loop: {e}")
             time.sleep(2.0)
             if fatal_errors >= 3:
                 break
@@ -280,7 +304,7 @@ def capture_loop():
             print("DEBUG: Exiting capture_loop()")
 
             if not running:
-                send_notification("Virtual Monitor", "Stream Exiting...")
+                send_notification("Virtual Monitor", "Right-click the tray icon to reconnect or exit the application.")
 
 def on_quit(icon, _):
     global running
