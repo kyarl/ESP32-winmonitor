@@ -1,3 +1,5 @@
+<img width="2280" height="999" alt="logo" src="https://github.com/user-attachments/assets/9dc52aa7-8ed5-4359-897f-c0441b1ba558" />
+
 # ESP32-winmonitor
 Uses a python app to grab frames of a windows monitor an streams them over wifi to an ESP32 with an 320x170 LCD Screen connected over SPI
 
