@@ -45,6 +45,7 @@ Wiring diagrams are pretty yucky so I will probably end up making a schematic at
 
 ## Usage
 - For a more in-depth guide, see the full pdf here: https://github.com/kyarl/ESP32-winmonitor/blob/main/misc/Mini%20Monitor%20Assembly%20Guide.pdf 
+
 For RGB565 Mode (Default / the "main" version) then:
 - If you are using S3 Supermini, edit pin definitions.
 - Upload the RGB565 Arduino Sketch to the esp32
