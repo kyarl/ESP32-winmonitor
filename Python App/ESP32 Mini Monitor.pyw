@@ -371,5 +371,24 @@ def main():
     sys.exit()
 
 if __name__ == "__main__":
+    # Create a desktop shortcut for the application if it doesn't already exist
+    shortcut_name = "ESP32 Mini Monitor App.lnk"
+    shortcut_path = os.path.join(os.path.dirname(__file__), shortcut_name)
+
+    target = sys.executable if getattr(sys, "frozen", False) else os.path.abspath(__file__)
+    icon_path = os.path.join(os.path.dirname(__file__), "icon.ico")
+
+    if not os.path.exists(shortcut_path):
+        import win32com.client  # requires pywin32
+
+        shell = win32com.client.Dispatch("WScript.Shell")
+        shortcut = shell.CreateShortCut(shortcut_path)
+        shortcut.Targetpath = target
+        shortcut.WorkingDirectory = os.path.dirname(target)
+        shortcut.IconLocation = icon_path
+        shortcut.save()
+
+
+    # otherwise just run the app:
     print("DEBUG: Starting")
     main()
