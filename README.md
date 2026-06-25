@@ -25,11 +25,11 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 
 # How To Use
 ## Hardware Requirements
+- See Assembly Guide in "misc" folder or Linked Below!
 - EITHER [Seeed Studio XIAO ESP32C3 Microcontroller](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) (other ESP32 & Wifi enabled MCUs Probably work too!)
 - OR [ESP32 S3 Supermini](https://www.espboards.dev/esp32/esp32-s3-super-mini/) (Hopefully someone can offer up some code to parallelise receiving and displaying frames with the S3's second core.)  
 - 320x170 LCD display (SPI), can be generic from [aliexpress](https://www.aliexpress.com/item/1005007239448040.html?). can also probably be any other resolution if you can adjust code!
 - Some short female to female dupont jumpers. (Technically dont have to be short, but easier to deal fit in enclosure)
-- Assembly Guide Coming Soon!
 - 3D Print the enclosure from MakerWorld (For the appropriate MCU): (link tbd)
 - Wiring Diagrams XIAO ESP32 C3 & ESP32 S3 Supermini:
   
@@ -44,7 +44,7 @@ Wiring diagrams are pretty yucky so I will probably end up making a schematic at
 - Arduino IDE to upload the code to the ESP32. Google how to make Arduino IDE Compatible with ESP32 Boards if you haven't done this already.
 
 ## Usage
-- TBD Properly
+- For a more in-depth guide, see the full pdf here: https://github.com/kyarl/ESP32-winmonitor/blob/main/misc/Mini%20Monitor%20Assembly%20Guide.pdf 
 For RGB565 Mode (Default / the "main" version) then:
 - If you are using S3 Supermini, edit pin definitions.
 - Upload the RGB565 Arduino Sketch to the esp32
@@ -53,7 +53,7 @@ For RGB565 Mode (Default / the "main" version) then:
 - If you want, add the shortcut to your startup apps folder.
 
 ## Troubleshooting
-- TBD lol
+- TBD, hopefully there are no issues!
 - Check ur wiring I guess as a first step. Also check your pinout if you got a non-XIAO board.
 - Also probably I messed up the code when cleaning it up for github/removing PII.
 
