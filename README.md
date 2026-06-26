@@ -25,6 +25,15 @@ In my experience with an ESP32 C3 XIAO, your results may vary: (Similar for S3 S
 
 *These framerates can likely be increased by making use of the ESP32 S3 Supermini's additional core, which would allow parallelising recieving and displaying of frames. Alternatively also might be able to make use of usb CDC to remove the reliance on WiFi streaming (And thus use a RP2350 for example), but I haven't looked into this.
 
+## Gallery:
+
+
+<img width="30%" alt="demo" src="https://github.com/user-attachments/assets/3ce0860f-4a19-4e92-81e2-ae4a5e2735a6" />
+<img width="30%" alt="flights demo" src="https://github.com/user-attachments/assets/04cec744-105b-43d6-b112-9f39ff06b196" />
+<img width="30%" alt="rainmeter demo" src="https://github.com/user-attachments/assets/dd729b28-1dab-483d-85c3-700f7a928c89" />
+
+
+
 # How To Use
 ## Hardware Requirements
 - See Assembly Guide in "misc" folder or Linked Below!
